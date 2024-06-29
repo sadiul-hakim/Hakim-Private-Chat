@@ -23,7 +23,37 @@ let color = [
     "#bb04ad",
     "#bb0472",
     "#bb0435",
-    "#050505"
+    "#050505",
+    "#9a401a",
+    "#9b3001",
+    "#d07f06",
+    "#7a4900",
+    "#e7bc06",
+    "#4b3c01",
+    "#cbce00",
+    "#798c00",
+    "#515d11",
+    "#adef29",
+    "#6f9400",
+    "#2d3f00",
+    "#349841",
+    "#3cff58",
+    "#01520d",
+    "#1d8c55",
+    "#00733a",
+    "#2da98c",
+    "#005440",
+    "#138a80",
+    "#004f48",
+    "#097991",
+    "#00cffd",
+    "#0f84c4",
+    "#6b379b",
+    "#a243ff",
+    "#8825af",
+    "#470065",
+    "#dc10ac",
+    "#9a225e"
 ];
 
 function createElement(name, classArr, content) {
@@ -41,14 +71,14 @@ function onMessageReceive(payload) {
         let pTag = createElement("p", ["alert", "alert-success", "mx-auto", "my-2", "w-50", "text-center"], body.sender + " has joined");
         chatBody.append(pTag);
     } else if (body.type === "CHAT") {
-        let pTag = createElement("div", ["p-2", "card", "bg-light", "w-25","mb-1"], "");
+        let pTag = createElement("div", ["p-2", "card", "bg-light", "w-25", "mb-1"], "");
 
         let avatar = createElement("span", ["text-center", "d-flex", "justify-content-center", "align-items-center", "text-light", "me-2"],
             body.sender.charAt(0).toUpperCase());
         avatar.style.borderRadius = "50%";
         avatar.style.width = "40px";
         avatar.style.height = "40px";
-        avatar.style.background = color[Math.ceil(Math.random() * 10)];
+        avatar.style.background = color[Math.ceil(Math.random() * (color.length - 1))];
         let nameSpan = createElement("h4", ["text-success"], "");
 
         let nameDiv = createElement("div", ["d-flex", "justify-content-start", "align-items-center"], "");
